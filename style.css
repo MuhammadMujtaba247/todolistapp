@@ -1,0 +1,210 @@
+:root {
+  --licorice: rgba(28, 17, 10, 1);
+  --vanilla: rgba(228, 214, 167, 1);
+  --orange-crayola: rgba(255, 119, 51, 1);
+  --rufous: rgba(155, 41, 21, 1);
+  --verdigris: rgba(80, 162, 167, 1);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  height: 100%;
+}
+body {
+  flex:1;
+  margin: 0;
+  background-color: var(--verdigris);
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+main {
+  width: 60%;
+  padding: 20px;
+  background-color: var(--vanilla);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--rufous);
+  border-radius: 15px;
+  border: 2px solid var(--licorice);
+}
+
+#input-div {
+  margin-top: 10px;
+  width: 99%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.input-task {
+  width: 50%;
+  height: 45px;
+  background-color: var(--vanilla);
+  border: 2px solid var(--rufous);
+  border-radius: 10px;
+  font-size: 18px;
+  color: var(--licorice);
+  padding-left: 15px;
+  margin-left: 10px;
+}
+
+::placeholder {
+  color: var(--licorice);
+}
+
+.input-task:focus-visible {
+  outline: 2px solid var(--orange-crayola);
+}
+
+#clearAll-button,
+.check-button,
+.task-button,
+#addtodo-button {
+  color: var(--licorice);
+  background-color: var(--orange-crayola);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.check-button {
+  background-color: var(--licorice);
+  border: 2px solid var(--vanilla);
+}
+#clearAll-button,
+#addtodo-button {
+  margin-left: 15px;
+  padding: 15px 20px;
+  width: 125px;
+  min-width: max-content;
+}
+
+#clearAll-button:hover,
+.check-button:hover,
+.task-button:hover {
+  background-color: var(--rufous);
+  color: var(--vanilla);
+  transition: ease 100ms;
+  transform: scale(1.25);
+}
+
+.check-button:hover > svg,
+.task-button:hover > svg {
+  fill: var(--vanilla);
+}
+
+#clearAll-button:hover,
+#addtodo-button:hover {
+  background-color: var(--rufous);
+  color: var(--vanilla);
+  transform: scale(1.1);
+  transition: ease 100ms;
+}
+
+hr {
+  width: 90%;
+}
+
+#tasks-display {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task {
+  background-color: var(--licorice);
+  color: var(--vanilla);
+  height: 60px;
+  width: 85%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  outline: 2px solid var(--orange-crayola);
+  border-radius: 10px;
+}
+
+.task-buttons {
+  width: 15%;
+  min-width: max-content;
+  display: flex;
+  justify-content: space-around;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+svg {
+  height: 25px;
+  width: 25px;
+}
+
+.task-buttons > button > svg {
+  margin-top: 4px;
+  fill: var(--licorice);
+}
+
+.task-label {
+  align-self: center;
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+}
+
+.check-button > svg {
+  fill: var(--vanilla);
+  width: 25px;
+  height: 25px;
+  margin-top: 5px;
+}
+
+p > .task-button {
+  margin-left: 5px;
+  padding: 0 10px;
+  height: 36px;
+}
+
+p > .input-task {
+  height: 36px;
+}
+
+#test {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.checked-check-button {
+  background-color: var(--orange-crayola);
+  border: none;
+  > svg {
+    fill: var(--licorice);
+  }
+}
+.task-buttons > .task-button {
+  margin-left: 10px;
+}
+
+#tasks-display:empty::before {
+  content: " No tasks yet. Add one above! ";
+  display: block;
+  text-align: center;
+  padding: 40px;
+  color: var(--rufous);
+  font-style: italic;
+  font-size: xx-large;
+}
